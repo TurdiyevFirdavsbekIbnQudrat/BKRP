@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
 using Poliklinika.Application.Abstraction;
 using Poliklinika.Domain.Entities;
+using Poliklinika.Infrastructure.Configuration;
 
 namespace Poliklinika.Infrastructure
 {
@@ -18,6 +19,12 @@ namespace Poliklinika.Infrastructure
                     if (!databaseCreator.CanConnect())  databaseCreator.CreateAsync();
                     if (!databaseCreator.HasTables())  databaseCreator.CreateTablesAsync();
                 }
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new IshchiTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new KunVaVaqtTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new ShifokorIshKunlariTypeConfiguration());
         }
         public virtual DbSet<Ishchi> Ishchilar { get; set; }
         public virtual DbSet<Admin> Adminlar { get; set; }

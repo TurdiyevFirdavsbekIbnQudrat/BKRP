@@ -7,15 +7,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9BD21CEA-A0A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Poliklinika", "Poliklinika", "{341E4DBA-8EB8-4255-AC1E-02C5DE9A5C71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poliklinika.API", "src\Poliklinika\Poliklinika.API\Poliklinika.API.csproj", "{61A0F2AA-0014-4B77-9509-C23E9619CBE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poliklinika.API", "src\Poliklinika\Poliklinika.API\Poliklinika.API.csproj", "{61A0F2AA-0014-4B77-9509-C23E9619CBE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poliklinika.Domain", "src\Poliklinika\Poliklinika.Domain\Poliklinika.Domain.csproj", "{E7DA1BA0-A4A3-4AAE-9923-5F3E6EF69C5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poliklinika.Domain", "src\Poliklinika\Poliklinika.Domain\Poliklinika.Domain.csproj", "{E7DA1BA0-A4A3-4AAE-9923-5F3E6EF69C5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poliklinika.Application", "src\Poliklinika\Poliklinika.Application\Poliklinika.Application.csproj", "{02E0BC21-3702-450B-B12E-90FD30A14A07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poliklinika.Application", "src\Poliklinika\Poliklinika.Application\Poliklinika.Application.csproj", "{02E0BC21-3702-450B-B12E-90FD30A14A07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poliklinika.Infrastructure", "src\Poliklinika\Poliklinika.Infrastructure\Poliklinika.Infrastructure.csproj", "{5632E654-37C4-4ED9-978B-83B0F907091F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poliklinika.Infrastructure", "src\Poliklinika\Poliklinika.Infrastructure\Poliklinika.Infrastructure.csproj", "{5632E654-37C4-4ED9-978B-83B0F907091F}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{0D300EAE-0AF0-4A08-A426-86BF9865D170}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bogcha", "Bogcha", "{F9D0073B-B475-4A4F-884E-FDD76C73385C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bogcha.API", "src\Bogcha\Bogcha.API\Bogcha.API.csproj", "{4BA35C1B-A5A4-45B4-87F6-D26C5D47B311}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bogcha.Domain", "src\Bogcha\Bogcha.Domain\Bogcha.Domain.csproj", "{6D8539A7-2F27-463A-A287-D3587C215E63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bogcha.Infrastructure", "src\Bogcha\Bogcha.Infrastructure\Bogcha.Infrastructure.csproj", "{AB62CADD-C1B5-4120-AA47-8A5D0152775D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bogcha.Application", "src\Bogcha\Bogcha.Application\Bogcha.Application.csproj", "{53711062-9532-405D-889C-533A717B41AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +53,22 @@ Global
 		{0D300EAE-0AF0-4A08-A426-86BF9865D170}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D300EAE-0AF0-4A08-A426-86BF9865D170}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D300EAE-0AF0-4A08-A426-86BF9865D170}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BA35C1B-A5A4-45B4-87F6-D26C5D47B311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA35C1B-A5A4-45B4-87F6-D26C5D47B311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA35C1B-A5A4-45B4-87F6-D26C5D47B311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA35C1B-A5A4-45B4-87F6-D26C5D47B311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D8539A7-2F27-463A-A287-D3587C215E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D8539A7-2F27-463A-A287-D3587C215E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D8539A7-2F27-463A-A287-D3587C215E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D8539A7-2F27-463A-A287-D3587C215E63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB62CADD-C1B5-4120-AA47-8A5D0152775D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB62CADD-C1B5-4120-AA47-8A5D0152775D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB62CADD-C1B5-4120-AA47-8A5D0152775D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB62CADD-C1B5-4120-AA47-8A5D0152775D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53711062-9532-405D-889C-533A717B41AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53711062-9532-405D-889C-533A717B41AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53711062-9532-405D-889C-533A717B41AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53711062-9532-405D-889C-533A717B41AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +79,11 @@ Global
 		{E7DA1BA0-A4A3-4AAE-9923-5F3E6EF69C5F} = {341E4DBA-8EB8-4255-AC1E-02C5DE9A5C71}
 		{02E0BC21-3702-450B-B12E-90FD30A14A07} = {341E4DBA-8EB8-4255-AC1E-02C5DE9A5C71}
 		{5632E654-37C4-4ED9-978B-83B0F907091F} = {341E4DBA-8EB8-4255-AC1E-02C5DE9A5C71}
+		{F9D0073B-B475-4A4F-884E-FDD76C73385C} = {9BD21CEA-A0A0-4668-9EAA-A17B66BED5E5}
+		{4BA35C1B-A5A4-45B4-87F6-D26C5D47B311} = {F9D0073B-B475-4A4F-884E-FDD76C73385C}
+		{6D8539A7-2F27-463A-A287-D3587C215E63} = {F9D0073B-B475-4A4F-884E-FDD76C73385C}
+		{AB62CADD-C1B5-4120-AA47-8A5D0152775D} = {F9D0073B-B475-4A4F-884E-FDD76C73385C}
+		{53711062-9532-405D-889C-533A717B41AD} = {F9D0073B-B475-4A4F-884E-FDD76C73385C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3DF5D23-245C-4A82-AABB-59335FD91F8B}

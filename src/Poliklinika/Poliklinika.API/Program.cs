@@ -49,7 +49,8 @@ builder.Services.AddSwaggerGen(options =>
         }
 
     });
-}); builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+}); 
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
    .AddJwtBearer(opttins =>
    {
        opttins.TokenValidationParameters = new TokenValidationParameters
