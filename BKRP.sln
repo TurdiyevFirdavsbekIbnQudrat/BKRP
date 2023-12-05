@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9BD21CEA-A0A0-4668-9EAA-A17B66BED5E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Poliklinika", "Poliklinika", "{341E4DBA-8EB8-4255-AC1E-02C5DE9A5C71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poliklinika.API", "src\Poliklinika\Poliklinika.API\Poliklinika.API.csproj", "{61A0F2AA-0014-4B77-9509-C23E9619CBE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poliklinika.Domain", "src\Poliklinika\Poliklinika.Domain\Poliklinika.Domain.csproj", "{E7DA1BA0-A4A3-4AAE-9923-5F3E6EF69C5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poliklinika.Application", "src\Poliklinika\Poliklinika.Application\Poliklinika.Application.csproj", "{02E0BC21-3702-450B-B12E-90FD30A14A07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poliklinika.Infrastructure", "src\Poliklinika\Poliklinika.Infrastructure\Poliklinika.Infrastructure.csproj", "{5632E654-37C4-4ED9-978B-83B0F907091F}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{0D300EAE-0AF0-4A08-A426-86BF9865D170}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61A0F2AA-0014-4B77-9509-C23E9619CBE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61A0F2AA-0014-4B77-9509-C23E9619CBE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61A0F2AA-0014-4B77-9509-C23E9619CBE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61A0F2AA-0014-4B77-9509-C23E9619CBE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7DA1BA0-A4A3-4AAE-9923-5F3E6EF69C5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7DA1BA0-A4A3-4AAE-9923-5F3E6EF69C5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7DA1BA0-A4A3-4AAE-9923-5F3E6EF69C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7DA1BA0-A4A3-4AAE-9923-5F3E6EF69C5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E0BC21-3702-450B-B12E-90FD30A14A07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E0BC21-3702-450B-B12E-90FD30A14A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E0BC21-3702-450B-B12E-90FD30A14A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E0BC21-3702-450B-B12E-90FD30A14A07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5632E654-37C4-4ED9-978B-83B0F907091F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5632E654-37C4-4ED9-978B-83B0F907091F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5632E654-37C4-4ED9-978B-83B0F907091F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5632E654-37C4-4ED9-978B-83B0F907091F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D300EAE-0AF0-4A08-A426-86BF9865D170}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D300EAE-0AF0-4A08-A426-86BF9865D170}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D300EAE-0AF0-4A08-A426-86BF9865D170}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D300EAE-0AF0-4A08-A426-86BF9865D170}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{341E4DBA-8EB8-4255-AC1E-02C5DE9A5C71} = {9BD21CEA-A0A0-4668-9EAA-A17B66BED5E5}
+		{61A0F2AA-0014-4B77-9509-C23E9619CBE8} = {341E4DBA-8EB8-4255-AC1E-02C5DE9A5C71}
+		{E7DA1BA0-A4A3-4AAE-9923-5F3E6EF69C5F} = {341E4DBA-8EB8-4255-AC1E-02C5DE9A5C71}
+		{02E0BC21-3702-450B-B12E-90FD30A14A07} = {341E4DBA-8EB8-4255-AC1E-02C5DE9A5C71}
+		{5632E654-37C4-4ED9-978B-83B0F907091F} = {341E4DBA-8EB8-4255-AC1E-02C5DE9A5C71}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3DF5D23-245C-4A82-AABB-59335FD91F8B}
+	EndGlobalSection
+EndGlobal

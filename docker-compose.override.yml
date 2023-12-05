@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  poliklinika.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "2343:80"
+      - "1234:443"

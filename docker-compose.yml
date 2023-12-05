@@ -1,0 +1,29 @@
+version: '3.4'
+
+networks:
+  backend:
+
+services:
+  poliklinikadb:
+    container_name: poliklinika-dbcontainer
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=pa@2or$%%dd
+    networks:
+      - backend
+    ports:
+      - 7570:1433 
+  
+  poliklinika.api:
+    image: ${DOCKER_REGISTRY-}poliklinikaapi
+    build:
+      context: .
+      dockerfile: src/Poliklinika/Poliklinika.API/Dockerfile
+    networks:
+      - backend
+    environment:
+      - DB_HOST=poliklinikadb
+      - DB_NAME=PoliklinikaDb
+      - DB_SA_PASSWORD=pa@2or$%%dd
+
