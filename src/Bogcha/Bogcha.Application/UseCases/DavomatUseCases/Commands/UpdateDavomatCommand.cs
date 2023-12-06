@@ -1,13 +1,12 @@
-﻿using Bogcha.Domain.Entities;
-using MediatR;
+﻿using MediatR;
 
 namespace Bogcha.Application.UseCases.DavomatUseCases.Commands
 {
-    public class CreateDavomatCommand:IRequest<Davomat>
+    public class UpdateDavomatCommand : IRequest<string>
     {
+        public int Id { get; set; }
         public int ishtirok { get; set; }
         public int BolaId { get; set; }
         public int TarbiyachId { get; set; }
-
     }
 }

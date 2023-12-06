@@ -17,10 +17,10 @@ namespace Bogcha.Application.UseCases.BolaUseCases.Handlers
 
         public async Task<Bola> Handle(GetByIdBolaCommand request, CancellationToken cancellationToken)
         {
-            var HammaBolalar = await bogchaDbContext.Bolalar.FirstOrDefaultAsync(x=>x.Id==request.Id);
-            if (HammaBolalar != null)
+            var BirBola = await bogchaDbContext.Bolalar.FirstOrDefaultAsync(x=>x.Id==request.Id);
+            if (BirBola != null)
             {
-                return HammaBolalar;
+                return BirBola;
             }
             return new Bola();
         }

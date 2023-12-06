@@ -16,14 +16,15 @@ namespace Bogcha.Application.UseCases.BolaUseCases.Handlers
 
         public async Task<string> Handle(UpdateBolaCommand request, CancellationToken cancellationToken)
         {
-            var BirIshchi = await bogchaDbContext.Bolalar.FirstOrDefaultAsync(x => x.Id == request.Id);
-            if (BirIshchi != null)
+            var BirBola = await bogchaDbContext.Bolalar.FirstOrDefaultAsync(x => x.Id == request.Id);
+            if (BirBola != null)
             {
-                BirIshchi.Familiya = request.Familiya;
-                BirIshchi.Ism = request.Ism;
-                BirIshchi.GuruhId = request.GuruhId;
                 try
                 {
+                    BirBola.Familiya = request.Familiya;
+                    BirBola.Ism = request.Ism;
+                    BirBola.GuruhId = request.GuruhId;
+
                     await bogchaDbContext.SaveChangesAsync(cancellationToken);
                     return "yangilandi!!!";
                 }

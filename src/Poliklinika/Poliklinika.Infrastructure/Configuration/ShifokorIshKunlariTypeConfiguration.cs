@@ -20,7 +20,8 @@ namespace Poliklinika.Infrastructure.Configuration
             builder.HasData
                 (
                 new ShifokorIshKunlari 
-                { Dushanba = "08:00", 
+                { Id=1,
+                  Dushanba = "08:00", 
                   Seshanba = "08:00", 
                   Chorshanba = "09:00",
                   Payshanba = "13:00",
@@ -29,7 +30,7 @@ namespace Poliklinika.Infrastructure.Configuration
                   IshchId=1
                 }, 
                 new ShifokorIshKunlari
-                {
+                {   Id=2,
                     Dushanba = "10:00",
                     Seshanba = "09:00",
                     Chorshanba = "09:00",
