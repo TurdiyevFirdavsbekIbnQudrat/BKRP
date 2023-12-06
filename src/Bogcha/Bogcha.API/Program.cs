@@ -1,3 +1,6 @@
+using Bogcha.Application;
+using Bogcha.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

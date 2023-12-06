@@ -18,7 +18,7 @@ namespace Bogcha.Domain.Entities
         public string Familiya { get; set; }
 
         [Column("GuruhId")]
-        public string GuruhId { get; set; }
+        public int GuruhId { get; set; }
         [ForeignKey("GuruhId")]
         public Guruh guruh { get; set; }
         

@@ -13,7 +13,7 @@ services:
     networks:
       - backend
     ports:
-      - 7570:1433 
+      - 8080:1433 
   
   poliklinika.api:
     image: ${DOCKER_REGISTRY-}poliklinikaapi
@@ -25,5 +25,18 @@ services:
     environment:
       - DB_HOST=poliklinikadb
       - DB_NAME=PoliklinikaDb
+      - DB_SA_PASSWORD=pa@2or$%%dd
+
+
+  bogcha.api:
+    image: ${DOCKER_REGISTRY-}bogchaapi
+    build:
+      context: .
+      dockerfile: src/Bogcha/Bogcha.API/Dockerfile
+    networks:
+      - backend
+    environment:
+      - DB_HOST=poliklinikadb
+      - DB_BOGCHA_NAME=BogchaDb
       - DB_SA_PASSWORD=pa@2or$%%dd
 

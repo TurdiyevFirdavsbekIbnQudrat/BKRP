@@ -5,5 +5,10 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "2343:80"
-      - "1234:443"
+      - "2345:80"
+
+  bogcha.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "4545:80"
