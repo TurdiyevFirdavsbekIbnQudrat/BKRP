@@ -19,7 +19,7 @@ namespace Poliklinika.Application.UseCases.IshchilarCases.Handlers
         {
             
             
-                Ishchi BirIshchi = poliklinikaDbContext.Ishchilar.Include(x=>x.shifokorIshKunlari).Where(x=>x.Id==request.Id) as Ishchi;
+                Ishchi BirIshchi = poliklinikaDbContext.Ishchilar.Include(x=>x.shifokorIshKunlari).ThenInclude(x=>x.kunVaVaqt).Where(x=>x.Id==request.Id) as Ishchi;
             if (BirIshchi != null)
             {
                 var command = new Ishchi()

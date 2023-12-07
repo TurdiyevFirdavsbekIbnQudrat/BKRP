@@ -21,12 +21,12 @@ namespace Poliklinika.Application.UseCases.ShifokorlarIshKunlariCases.Handler
             poliknikaDbContext = _poliknikaDbContext;
         }
 
-        public async Task<ShifokorIshKunlari> Handle(GetByIdShifokorIshKunlariCommand request, CancellationToken cancellationToken)
+        public  async Task<ShifokorIshKunlari> Handle(GetByIdShifokorIshKunlariCommand request, CancellationToken cancellationToken)
         {
 
             try
             {
-                ShifokorIshKunlari Ishchi = await poliknikaDbContext.shifokorningIshKunlari.FirstOrDefaultAsync(x=>x.Id==request.Id);
+                ShifokorIshKunlari Ishchi = poliknikaDbContext.shifokorningIshKunlari.Include(x=>x.kunVaVaqt).Where(x=>x.Id==request.Id) as ShifokorIshKunlari;
                 return Ishchi;
 
             }
