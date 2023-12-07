@@ -7,10 +7,9 @@ namespace Kadastr.Application.Abstraction
     {
 
         DbSet<Foydalanuvchi> Foydalanuvchilar { get; set; }
-
         DbSet<Rollar> Rollars { get; set; }
         DbSet<Yer> Yerlar { get; set; }
         DbSet<YerNarxi> YerNarxlar { get; set; }
-        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+        public ValueTask<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

@@ -10,5 +10,6 @@ namespace Kadastr.Application.UseCases.YerNarxiUseCases.Queries
 {
     public class GetByIdYerNarxiCommand:IRequest<YerNarxi>
     {
+        public int Id { get; set; }
     }
 }
