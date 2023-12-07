@@ -1,5 +1,6 @@
 ﻿using Bogcha.Application.Abstraction;
 using Bogcha.Domain.Entities;
+using Bogcha.Infrastructure.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -17,9 +18,25 @@ namespace Bogcha.Infrastructure
                 if (!databaseCreator.HasTables()) databaseCreator.CreateTablesAsync();
             }
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new BolaTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new TarbiyachiTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new DavomatTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new AdminTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new GuruhTypeConfiguration());
+        }
+
+        async ValueTask<int> IBogchaDbContext.SaveChangesAsync(CancellationToken cancellationToken)
+        {
+            return await base.SaveChangesAsync(cancellationToken);
+        }
+
+        public virtual    DbSet<Admin> Adminlar { get; set; }
         public virtual    DbSet<Bola> Bolalar { get; set; }
         public virtual    DbSet<Tarbiyachi> Tarbiyachilar { get; set; }
         public virtual    DbSet<Guruh> Guruhlar { get; set; }
         public virtual    DbSet<Davomat> Davomatlar { get; set; }
+        
     }
 }

@@ -22,7 +22,7 @@ namespace Poliklinika.Domain.Entities
 
         [Column("XonaNomi")]
         public string XonaNomi { get; set; }
-        [Column("Ish Kunlar")]
+        
         public ShifokorIshKunlari shifokorIshKunlari { get; set; }
        }
 }

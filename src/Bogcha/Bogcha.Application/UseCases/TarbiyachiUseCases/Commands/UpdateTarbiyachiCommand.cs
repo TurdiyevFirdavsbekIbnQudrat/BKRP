@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
 
 namespace Bogcha.Application.UseCases.TarbiyachiUseCases.Commands
 {
-    internal class UpdateTarbiyachiCommand
+    public class UpdateTarbiyachiCommand : IRequest<string>
     {
+        public int Id { get; set; }
+        public string Ism { get; set; }
+        public string Familiya { get; set; }
+        public int GuruhId { get; set; }
     }
 }

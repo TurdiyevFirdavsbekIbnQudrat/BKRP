@@ -20,6 +20,10 @@ namespace Poliklinika.Infrastructure
                     if (!databaseCreator.HasTables())  databaseCreator.CreateTablesAsync();
                 }
         }
+        async ValueTask<int> IPoliklinikaDbContext.SaveChangesAsync(CancellationToken cancellationToken)
+        {
+            return await base.SaveChangesAsync(cancellationToken);
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new IshchiTypeConfiguration());

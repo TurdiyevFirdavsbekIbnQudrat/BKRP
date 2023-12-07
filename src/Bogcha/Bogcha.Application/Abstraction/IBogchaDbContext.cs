@@ -14,7 +14,7 @@ namespace Bogcha.Application.Abstraction
         DbSet<Tarbiyachi> Tarbiyachilar {  get; set; }
         DbSet<Guruh> Guruhlar {  get; set; }
         DbSet<Davomat> Davomatlar {  get; set; }
-
-        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+        DbSet<Admin> Adminlar {  get; set; }
+        public ValueTask<int> SaveChangesAsync(CancellationToken cancellationToken=default);
     }
 }

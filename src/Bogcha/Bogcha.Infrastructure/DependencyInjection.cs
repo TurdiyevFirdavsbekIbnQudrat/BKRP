@@ -1,5 +1,6 @@
 ﻿using Bogcha.Application.Abstraction;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Bogcha.Infrastructure
@@ -13,15 +14,29 @@ namespace Bogcha.Infrastructure
             var dbName = Environment.GetEnvironmentVariable("DB_BOGCHA_NAME");
             var dbPassword = Environment.GetEnvironmentVariable("DB_SA_PASSWORD");
             //var connectionsString= "Data Source=poliklinikadb;Initial Catalog=TestDB;User Id=SA;Password=pa@2or$%%dd;Persist Security Info=True;Encrypt=False";
-            //var connectionsString = "Server=DESKTOP-HUHB6EP;Database = server21;Trusted_Connection=True;TrustServerCertificate=True;";
-
-
-            var connectionsString = $"Data Source={dbHost};Initial Catalog={dbName};User ID=sa;Password={dbPassword};Encrypt=False;Connection Timeout=120";
+            var connectionsString = "Server=DESKTOP-HUHB6EP;Database = server22;MultipleActiveResultSets=True;Connection Timeout=200;Trusted_Connection=True;TrustServerCertificate=True;";
 
             services.AddDbContext<IBogchaDbContext, BogchaDbContext>(options =>
             {
-                options.UseSqlServer(connectionsString, providerOptions => providerOptions.EnableRetryOnFailure());
+                options.UseSqlServer(connectionsString,
+                    providerOptions =>
+                    {
+                        providerOptions
+                            .EnableRetryOnFailure(
+                                maxRetryCount: 5,
+                                maxRetryDelay: TimeSpan.FromSeconds(30),
+                                errorNumbersToAdd: null)
+                            .UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery);
+                    });
+                options.EnableSensitiveDataLogging();
+                options.ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning));
             });
+                // var connectionsString = $"Data Source={dbHost};Initial Catalog={dbName};User ID=sa;Password={dbPassword};Encrypt=False;Connection Timeout=120";
+
+            //    services.AddDbContext<IBogchaDbContext, BogchaDbContext>(options =>
+            //{
+            //    options.UseSqlServer(connectionsString, providerOptions => providerOptions.EnableRetryOnFailure());
+            //});
 
             return services;
         }

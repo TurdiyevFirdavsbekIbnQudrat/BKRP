@@ -9,6 +9,6 @@ namespace Poliklinika.Application.Abstraction
          DbSet<KunVaVaqt> kunVaqtlar {  get; set; }
          DbSet<ShifokorIshKunlari> shifokorningIshKunlari { get; set; }
          DbSet<Admin> Adminlar { get; set; }
-         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+        public  ValueTask<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

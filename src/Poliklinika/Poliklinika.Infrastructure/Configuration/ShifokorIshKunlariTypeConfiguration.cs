@@ -11,12 +11,12 @@ namespace Poliklinika.Infrastructure.Configuration
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).IsRequired();
             builder.Property(x => x.Id).IsRequired();
-            builder.Property(x => x.Dushanba).HasMaxLength(5).IsRequired();
-            builder.Property(x => x.Seshanba).HasMaxLength(5).IsRequired();
-            builder.Property(x => x.Chorshanba).HasMaxLength(5).IsRequired();
-            builder.Property(x => x.Payshanba).HasMaxLength(5).IsRequired();
-            builder.Property(x => x.Juma).HasMaxLength(5).IsRequired();
-            builder.Property(x => x.Shanba).HasMaxLength(5).IsRequired();
+            builder.Property(x => x.Dushanba).HasMaxLength(5).IsRequired().HasDefaultValue("08:00");
+            builder.Property(x => x.Seshanba).HasMaxLength(5).IsRequired().HasDefaultValue("08:00");
+            builder.Property(x => x.Chorshanba).HasMaxLength(5).IsRequired().HasDefaultValue("08:00");
+            builder.Property(x => x.Payshanba).HasMaxLength(5).IsRequired().HasDefaultValue("08:00");
+            builder.Property(x => x.Juma).HasMaxLength(5).IsRequired().HasDefaultValue("08:00");
+            builder.Property(x => x.Shanba).HasMaxLength(5).IsRequired().HasDefaultValue("08:00");
             builder.HasData
                 (
                 new ShifokorIshKunlari 

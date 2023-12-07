@@ -1,0 +1,122 @@
+{
+  "Routes": [
+    //poliklinika [shifokorIshKunlari]
+    {
+      "UpstreamPathTemplate": "/ShifokorIshKunlari",
+      "UpstreamHttpMethod": [ "Post", "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "poliklinika.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/ShifokorIshKunlari"
+    },
+
+    {
+      "UpstreamPathTemplate": "/ShifokorIshKunlari/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE", "PUT" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "poliklinika.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/ShifokorIshKunlari/{id}"
+    },
+    {
+      "UpstreamPathTemplate": "/api/ShifokorIshKunlari/GetShifokorIshKunlariById",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "poliklinika.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/ShifokorIshKunlari/GetShifokorIshKunlariById"
+    },
+    //poliklinika [Ishchi]
+    {
+      "UpstreamPathTemplate": "/Ishchi",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "poliklinika.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Ishchi"
+    },
+    {
+      "UpstreamPathTemplate": "/Ishchi/{id}",
+      "UpstreamHttpMethod": [ "Put", "get", "delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "poliklinika.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Ishchi/{id}"
+    },
+    //poliklinika [Authentication]
+    {
+      "UpstreamPathTemplate": "/Auth",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "poliklinika.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Auth"
+    },
+    //poliklinika [Admin]
+    {
+      "UpstreamPathTemplate": "/Admin",
+      "UpstreamHttpMethod": [ "Post", "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "poliklinika.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Admin"
+    },
+    {
+      "UpstreamPathTemplate": "/Admin/{id}",
+      "UpstreamHttpMethod": [ "DELETE", "GET", "PUT" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "poliklinika.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Admin/{id}"
+    },
+    //poliklinika [kunVaVaqt]
+    {
+      "UpstreamPathTemplate": "/KunVaVaqt",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "poliklinika.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/KunVaVaqt"
+    },
+    //Bogcha []
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:8015"
+  }
+}

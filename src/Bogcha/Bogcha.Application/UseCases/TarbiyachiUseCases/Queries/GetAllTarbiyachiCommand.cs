@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Bogcha.Domain.Entities;
+using MediatR;
 
 namespace Bogcha.Application.UseCases.TarbiyachiUseCases.Queries
 {
-    internal class GetAllTarbiyachiCommand
+    public class GetAllTarbiyachiCommand : IRequest<IEnumerable<Tarbiyachi>>
     {
+
+        public int Id { get; set; }
+        public string Ism { get; set; }
+        public string Familiya { get; set; }
+        public int GuruhId { get; set; }
     }
 }

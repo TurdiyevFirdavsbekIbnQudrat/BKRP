@@ -20,7 +20,7 @@ namespace Poliklinika.Application.UseCases.ShifokorlarIshKunlariCases.Handler
 
             try
             {
-                IEnumerable<ShifokorIshKunlari> HammaIshchilar = await poliknikaDbContext.shifokorningIshKunlari.ToListAsync();
+                IEnumerable<ShifokorIshKunlari> HammaIshchilar = await poliknikaDbContext.shifokorningIshKunlari.Include(x=>x.kunVaVaqt).ToListAsync();
                 return HammaIshchilar;
 
             }
