@@ -18,7 +18,7 @@ namespace Poliklinika.API.Controllers
         {
             mediator = _mediator;
         }
-       [Authorize]
+       [Authorize(Roles ="Admin")]
         [HttpPost]
         public async ValueTask<IActionResult> CreateIshchiAsync(CreateIshchilarCommand command)
         {
@@ -26,14 +26,14 @@ namespace Poliklinika.API.Controllers
             return Ok(result);
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async ValueTask<IActionResult> GetAllIshchiAsync()
         {
             return Ok(await mediator.Send(new GetAllishchiCommand()));
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet("{id}")]
         public async ValueTask<IActionResult> GetIshchiByIdAsync(int id)
         {
@@ -41,7 +41,7 @@ namespace Poliklinika.API.Controllers
             return Ok(await mediator.Send(command));
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async ValueTask<IActionResult> DeleteIshchiById(int id)
         {
@@ -49,7 +49,7 @@ namespace Poliklinika.API.Controllers
             return Ok(await mediator.Send(command));
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPut]
         public async ValueTask<IActionResult> UpdateIshchiById(UpdateIshchiCommand command)
         {

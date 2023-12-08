@@ -25,17 +25,20 @@ namespace Authorization.API.Service.AuthorizationService
                 Password = admin.Parol,
                 Role = admin.role
             }).ToList();
-            loginlist.AddRange(_poliklinikacDatabase.Admins.Select(Admin=>new Login() {
-            Password=Admin.Parol,
-            Role=Admin.role,
-            UserName=Admin.Username,
+
+            loginlist.AddRange(_bogchaDatabase.Admins.Select(Admin=>new Login() {
+            Password=Admin.Password,
+            Role=Admin.Role,
+            UserName=Admin.UserName,
             }));
+
             loginlist.AddRange(_bogchaDatabase.Teachers.Select(Admin => new Login()
             {
                 Password = Admin.Password, 
                 Role=Admin.role,
                 UserName=Admin.UserName
             }));
+
             var res = loginlist.FirstOrDefault(x => x.UserName == login.UserName && x.Password == Hash512.ComputeSHA512HashFromString(login.Password));
           
             if (res == null)

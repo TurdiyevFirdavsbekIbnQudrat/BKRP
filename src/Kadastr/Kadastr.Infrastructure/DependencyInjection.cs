@@ -10,7 +10,7 @@ namespace Kadastr.Infrastructure
         {
 
             var dbHost = Environment.GetEnvironmentVariable("DB_HOST");
-            var dbName = Environment.GetEnvironmentVariable("DB_KADASTR_NAME");
+            var dbName = Environment.GetEnvironmentVariable("DB_NAME");
             var dbPassword = Environment.GetEnvironmentVariable("DB_SA_PASSWORD");
             //var connectionsString= "Data Source=poliklinikadb;Initial Catalog=TestDB;User Id=SA;Password=pa@2or$%%dd;Persist Security Info=True;Encrypt=False";
             //var connectionsString = "Server=DESKTOP-HUHB6EP;Database = server21;Trusted_Connection=True;TrustServerCertificate=True;";

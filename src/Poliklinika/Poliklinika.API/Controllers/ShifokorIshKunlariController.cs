@@ -16,7 +16,7 @@ namespace Poliklinika.API.Controllers
         {
             mediator = _mediator;
         }
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async ValueTask<IActionResult> CreateShifokorIshKunlariAsync(CreateShifokorIshKunlariCommand command)
         {
@@ -24,14 +24,14 @@ namespace Poliklinika.API.Controllers
             return Ok(result);
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async ValueTask<IActionResult> GetAllShifokorIshKunlariAsync()
         {
             return Ok(await mediator.Send(new GetAllShifokorIshKunlariCommand()));
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet("{id}")]
         public async ValueTask<IActionResult> GetShifokorIshKunlariByIdAsync(int id)
         {
@@ -39,7 +39,7 @@ namespace Poliklinika.API.Controllers
             return Ok(await mediator.Send(command));
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async ValueTask<IActionResult> DeleteShifokorIshKunlariById(int id)
         {
@@ -47,7 +47,7 @@ namespace Poliklinika.API.Controllers
             return Ok(await mediator.Send(command));
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPut]
         public async ValueTask<IActionResult> UpdateAdminById(UpdateShifokorIshKunlariCommand command)
         {

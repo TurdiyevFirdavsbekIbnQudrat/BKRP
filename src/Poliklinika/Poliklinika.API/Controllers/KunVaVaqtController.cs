@@ -19,7 +19,7 @@ namespace Poliklinika.API.Controllers
         {
             mediator = _mediator;
         }
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async ValueTask<IActionResult> CreateKunVaVaqtAsync()
         {
@@ -28,7 +28,7 @@ namespace Poliklinika.API.Controllers
             return Ok(result);
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async ValueTask<IActionResult> GetAllKunVaVaqtAsync()
         {

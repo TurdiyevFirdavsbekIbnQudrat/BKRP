@@ -21,7 +21,7 @@ namespace Poliklinika.Infrastructure
                 }
         }
         async ValueTask<int> IPoliklinikaDbContext.SaveChangesAsync(CancellationToken cancellationToken)
-      {
+        {
             return await base.SaveChangesAsync(cancellationToken);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -29,6 +29,8 @@ namespace Poliklinika.Infrastructure
             modelBuilder.ApplyConfiguration(new IshchiTypeConfiguration());
             modelBuilder.ApplyConfiguration(new KunVaVaqtTypeConfiguration());
             modelBuilder.ApplyConfiguration(new ShifokorIshKunlariTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new CreateAdminConfiguration());
+            
         }
         public virtual DbSet<Ishchi> Ishchilar { get; set; }
         public virtual DbSet<Admin> Adminlar { get; set; }

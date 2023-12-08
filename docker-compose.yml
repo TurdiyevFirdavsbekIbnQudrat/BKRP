@@ -1,4 +1,6 @@
 version: '3.4'
+networks:
+  backend:
 services:
   umumiydb:
     container_name: umumiy-dbcontainer
@@ -6,7 +8,8 @@ services:
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=pa@2or$%%dd
-
+    networks:
+      - backend
     ports:
       - 7150:1433 
 
@@ -19,6 +22,8 @@ services:
       - DB_HOST=umumiydb
       - DB_NAME=PoliklinikaDb
       - DB_SA_PASSWORD=pa@2or$%%dd
+    networks:
+      - backend
 
   kadastr.api:
     image: ${DOCKER_REGISTRY-}kadastrapi
@@ -29,13 +34,16 @@ services:
       - DB_HOST=umumiydb
       - DB_NAME=KadastrDb
       - DB_SA_PASSWORD=pa@2or$%%dd
+    networks:
+      - backend
 
   bogcha.api:
     image: ${DOCKER_REGISTRY-}bogchaapi
     build:
       context: .
       dockerfile: src/Bogcha/Bogcha.API/Dockerfile
-
+    networks:
+      - backend
     environment:
       - DB_HOST=umumiydb
       - DB_NAME=BogchaDb
@@ -46,6 +54,8 @@ services:
     build:
       context: .
       dockerfile: src/BKRPGateWay/BPKRGateway/Dockerfile
+    networks:
+      - backend
     ports:
       - 2145:80 
 
@@ -55,6 +65,8 @@ services:
     build:
       context: .
       dockerfile: src/Authorization/Authorization.API/Dockerfile
+    networks:
+      - backend
     environment:
       - DB_HOST=umumiydb
       - DB_NAME=AuthorizationDb
