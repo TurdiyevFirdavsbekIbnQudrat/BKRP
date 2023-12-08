@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poliklinika.Application", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poliklinika.Infrastructure", "src\Poliklinika\Poliklinika.Infrastructure\Poliklinika.Infrastructure.csproj", "{5632E654-37C4-4ED9-978B-83B0F907091F}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{0D300EAE-0AF0-4A08-A426-86BF9865D170}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bogcha", "Bogcha", "{F9D0073B-B475-4A4F-884E-FDD76C73385C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bogcha.API", "src\Bogcha\Bogcha.API\Bogcha.API.csproj", "{4BA35C1B-A5A4-45B4-87F6-D26C5D47B311}"
@@ -33,13 +31,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPKRGateway", "src\BKRPGate
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kadastr", "Kadastr", "{1FD9D5DA-876C-43D4-BCDA-825FF9C4F375}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kadastr.API", "src\Kadastr\Kadastr.API\Kadastr.API.csproj", "{4A3136F0-901B-450D-B367-E138625BDE48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kadastr.API", "src\Kadastr\Kadastr.API\Kadastr.API.csproj", "{4A3136F0-901B-450D-B367-E138625BDE48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kadastr.Domain", "src\Kadastr\Kadastr.Domain\Kadastr.Domain.csproj", "{8ACEC398-DC91-4603-BA97-E647E0A9A30B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kadastr.Domain", "src\Kadastr\Kadastr.Domain\Kadastr.Domain.csproj", "{8ACEC398-DC91-4603-BA97-E647E0A9A30B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kadastr.Infrastructure", "src\Kadastr\Kadastr.Infrastructure\Kadastr.Infrastructure.csproj", "{0C331A72-8442-4EE7-9A38-2B33234E44B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kadastr.Infrastructure", "src\Kadastr\Kadastr.Infrastructure\Kadastr.Infrastructure.csproj", "{0C331A72-8442-4EE7-9A38-2B33234E44B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kadastr.Application", "src\Kadastr\Kadastr.Application\Kadastr.Application.csproj", "{0C01C41C-0975-46CC-84AF-D135943AEA52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kadastr.Application", "src\Kadastr\Kadastr.Application\Kadastr.Application.csproj", "{0C01C41C-0975-46CC-84AF-D135943AEA52}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2290A93C-34FA-4FF5-8786-14BBDBEA12C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authorization", "Authorization", "{00BF115E-5F2D-40B1-BE26-32EA8333DEC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorization.API", "src\Authorization\Authorization.API\Authorization.API.csproj", "{EC48D44B-409A-4562-8D3C-B8A5C0BDCAE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,10 +67,6 @@ Global
 		{5632E654-37C4-4ED9-978B-83B0F907091F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5632E654-37C4-4ED9-978B-83B0F907091F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5632E654-37C4-4ED9-978B-83B0F907091F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0D300EAE-0AF0-4A08-A426-86BF9865D170}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D300EAE-0AF0-4A08-A426-86BF9865D170}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0D300EAE-0AF0-4A08-A426-86BF9865D170}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D300EAE-0AF0-4A08-A426-86BF9865D170}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4BA35C1B-A5A4-45B4-87F6-D26C5D47B311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4BA35C1B-A5A4-45B4-87F6-D26C5D47B311}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BA35C1B-A5A4-45B4-87F6-D26C5D47B311}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -103,6 +103,14 @@ Global
 		{0C01C41C-0975-46CC-84AF-D135943AEA52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C01C41C-0975-46CC-84AF-D135943AEA52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C01C41C-0975-46CC-84AF-D135943AEA52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2290A93C-34FA-4FF5-8786-14BBDBEA12C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2290A93C-34FA-4FF5-8786-14BBDBEA12C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2290A93C-34FA-4FF5-8786-14BBDBEA12C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2290A93C-34FA-4FF5-8786-14BBDBEA12C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC48D44B-409A-4562-8D3C-B8A5C0BDCAE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC48D44B-409A-4562-8D3C-B8A5C0BDCAE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC48D44B-409A-4562-8D3C-B8A5C0BDCAE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC48D44B-409A-4562-8D3C-B8A5C0BDCAE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,6 +133,8 @@ Global
 		{8ACEC398-DC91-4603-BA97-E647E0A9A30B} = {1FD9D5DA-876C-43D4-BCDA-825FF9C4F375}
 		{0C331A72-8442-4EE7-9A38-2B33234E44B5} = {1FD9D5DA-876C-43D4-BCDA-825FF9C4F375}
 		{0C01C41C-0975-46CC-84AF-D135943AEA52} = {1FD9D5DA-876C-43D4-BCDA-825FF9C4F375}
+		{00BF115E-5F2D-40B1-BE26-32EA8333DEC8} = {9BD21CEA-A0A0-4668-9EAA-A17B66BED5E5}
+		{EC48D44B-409A-4562-8D3C-B8A5C0BDCAE0} = {00BF115E-5F2D-40B1-BE26-32EA8333DEC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3DF5D23-245C-4A82-AABB-59335FD91F8B}

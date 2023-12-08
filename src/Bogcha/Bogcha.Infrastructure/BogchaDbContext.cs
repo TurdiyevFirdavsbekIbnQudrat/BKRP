@@ -32,11 +32,11 @@ namespace Bogcha.Infrastructure
             return await base.SaveChangesAsync(cancellationToken);
         }
 
-        public virtual    DbSet<Admin> Adminlar { get; set; }
-        public virtual    DbSet<Bola> Bolalar { get; set; }
-        public virtual    DbSet<Tarbiyachi> Tarbiyachilar { get; set; }
-        public virtual    DbSet<Guruh> Guruhlar { get; set; }
-        public virtual    DbSet<Davomat> Davomatlar { get; set; }
+        public    DbSet<Admin> Adminlar { get; set; }
+        public     DbSet<Bola> Bolalar { get; set; }
+        public     DbSet<Tarbiyachi> Tarbiyachilar { get; set; }
+        public     DbSet<Guruh> Guruhlar { get; set; }
+        public     DbSet<Davomat> Davomatlar { get; set; }
         
     }
 }

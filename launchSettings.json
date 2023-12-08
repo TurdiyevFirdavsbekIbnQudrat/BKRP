@@ -5,7 +5,10 @@
       "commandVersion": "1.0",
       "serviceActions": {
         "poliklinika.api": "StartDebugging",
-        "bogcha.api": "StartDebugging"
+        "bogcha.api": "StartDebugging",
+        "kadastr.api": "StartDebugging",
+        "bpkrgateway": "StartDebugging",
+        "authorization.api": "StartDebugging"
       }
     }
   }

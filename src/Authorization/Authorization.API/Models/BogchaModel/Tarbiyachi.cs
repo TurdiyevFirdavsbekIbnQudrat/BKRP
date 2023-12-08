@@ -1,8 +1,8 @@
-﻿using Bogcha.Domain.Enums;
+﻿using Authorization.API.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Bogcha.Domain.Entities
+namespace Authorization.API.Models.BogchaModel
 {
     [Table("Tarbiyachi",Schema ="dbo")]
     public class Tarbiyachi
@@ -24,9 +24,6 @@ namespace Bogcha.Domain.Entities
 
         [Column("GuruhId")]
         public int GuruhId { get; set; }
-        [ForeignKey("GuruhId")]
-        public Guruh guruh { get; set; }
-        
-        public IEnumerable<Davomat> davomat { get; set; }
+
     }
 }

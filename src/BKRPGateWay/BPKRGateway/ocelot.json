@@ -114,7 +114,183 @@
       ],
       "DownstreamPathTemplate": "/api/KunVaVaqt"
     },
-    //Bogcha []
+    //Bogcha [Bola]
+    {
+      "UpstreamPathTemplate": "/Bola",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "bogcha.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Bola"
+    },
+    {
+      "UpstreamPathTemplate": "/Bola/{id}",
+      "UpstreamHttpMethod": [ "DELETE", "GET", "PUT" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "bogcha.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Bola/{id}"
+    },
+    //Bola[davomat] http://localhost:329/api/Davomat/CreateDavomat
+    {
+      "UpstreamPathTemplate": "/Davomat",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "bogcha.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Davomat"
+    },
+    {
+      "UpstreamPathTemplate": "/Davomat/{id}",
+      "UpstreamHttpMethod": [ "DELETE", "GET", "PUT" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "bogcha.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Davomat/{id}"
+    },
+    //Bola[Guruh] 
+    {
+      "UpstreamPathTemplate": "/Guruh",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "bogcha.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Guruh"
+    },
+    {
+      "UpstreamPathTemplate": "/Guruh/{id}",
+      "UpstreamHttpMethod": [ "DELETE", "GET", "PUT" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "bogcha.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Guruh/{id}"
+    },
+    //Bola [Tarbiyachi]
+    {
+      "UpstreamPathTemplate": "/Tarbiyachi",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "bogcha.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Tarbiyachi"
+    },
+    {
+      "UpstreamPathTemplate": "/Tarbiyachi/{id}",
+      "UpstreamHttpMethod": [ "DELETE", "GET", "PUT" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "bogcha.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Tarbiyachi/{id}"
+    },
+    // Kadastr[Foydalanuvchi]
+    {
+      "UpstreamPathTemplate": "/Foydalanuvchi",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "kadastr.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Foydalanuvchi"
+    },
+    {
+      "UpstreamPathTemplate": "/Foydalanuvchi/{id}",
+      "UpstreamHttpMethod": [ "DELETE", "GET", "PUT" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "kadastr.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Foydalanuvchi/{id}"
+    },
+    // Kadastr[Yer]
+    {
+      "UpstreamPathTemplate": "/Yer",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "kadastr.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Yer"
+    },
+    {
+      "UpstreamPathTemplate": "/Yer/{id}",
+      "UpstreamHttpMethod": [ "DELETE", "GET", "PUT" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "kadastr.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Yer/{id}"
+    },
+    // Kadastr [YerNarx]
+    {
+      "UpstreamPathTemplate": "/YerNarx",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "kadastr.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/YerNarx"
+    },
+    {
+      "UpstreamPathTemplate": "/YerNarx/{id}",
+      "UpstreamHttpMethod": [ "DELETE", "GET", "PUT" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "kadastr.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/YerNarx/{id}"
+    }
+
+
   ],
   "GlobalConfiguration": {
     "BaseUrl": "http://localhost:8015"

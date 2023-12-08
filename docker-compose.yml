@@ -1,42 +1,62 @@
 version: '3.4'
-
-networks:
-  backend:
-
 services:
-  poliklinikadb:
-    container_name: poliklinika-dbcontainer
+  umumiydb:
+    container_name: umumiy-dbcontainer
     image: mcr.microsoft.com/mssql/server:2022-latest
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=pa@2or$%%dd
-    networks:
-      - backend
+
     ports:
-      - 8080:1433 
-  
+      - 7150:1433 
+
   poliklinika.api:
     image: ${DOCKER_REGISTRY-}poliklinikaapi
     build:
       context: .
       dockerfile: src/Poliklinika/Poliklinika.API/Dockerfile
-    networks:
-      - backend
     environment:
-      - DB_HOST=poliklinikadb
+      - DB_HOST=umumiydb
       - DB_NAME=PoliklinikaDb
       - DB_SA_PASSWORD=pa@2or$%%dd
 
+  kadastr.api:
+    image: ${DOCKER_REGISTRY-}kadastrapi
+    build:
+      context: .
+      dockerfile: src/Kadastr/Kadastr.API/Dockerfile
+    environment:
+      - DB_HOST=umumiydb
+      - DB_NAME=KadastrDb
+      - DB_SA_PASSWORD=pa@2or$%%dd
 
   bogcha.api:
     image: ${DOCKER_REGISTRY-}bogchaapi
     build:
       context: .
       dockerfile: src/Bogcha/Bogcha.API/Dockerfile
-    networks:
-      - backend
+
     environment:
-      - DB_HOST=poliklinikadb
-      - DB_BOGCHA_NAME=BogchaDb
+      - DB_HOST=umumiydb
+      - DB_NAME=BogchaDb
+      - DB_SA_PASSWORD=pa@2or$%%dd
+
+  bpkrgateway:
+    image: ${DOCKER_REGISTRY-}bpkrgateway
+    build:
+      context: .
+      dockerfile: src/BKRPGateWay/BPKRGateway/Dockerfile
+    ports:
+      - 2145:80 
+
+
+  authorization.api:
+    image: ${DOCKER_REGISTRY-}authorizationapi
+    build:
+      context: .
+      dockerfile: src/Authorization/Authorization.API/Dockerfile
+    environment:
+      - DB_HOST=umumiydb
+      - DB_NAME=AuthorizationDb
       - DB_SA_PASSWORD=pa@2or$%%dd
 

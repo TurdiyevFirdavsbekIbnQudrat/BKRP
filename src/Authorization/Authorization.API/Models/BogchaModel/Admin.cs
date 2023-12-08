@@ -1,11 +1,12 @@
-﻿using Bogcha.Domain.Enums;
+﻿using Authorization.API.Enums;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Bogcha.Domain.Entities
+namespace Authorization.API.Models.BogchaModel
 {
-    [Table("Adminlar",Schema ="dbo")]
+    [Table("BogchaAdminlar",Schema ="dbo")]
     public class Admin
     {
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("Id")]
         public int Id { get; set; }

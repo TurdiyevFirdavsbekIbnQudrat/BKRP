@@ -26,7 +26,7 @@ namespace Bogcha.Application.UseCases.TokenCases.Handlers
             var AdminPU = await bogchaDbContext.Adminlar.FirstOrDefaultAsync(x => x.Password == request.Parol && x.UserName == request.UserName);
             if (AdminPU != null)
             {
-                var token = await GenerateToken(request.UserName, request.Role);
+                var token = await GenerateToken(AdminPU.UserName, AdminPU.Role.ToString());
                 return token;
             }
             return "Ma'lumotlar topilmadi";

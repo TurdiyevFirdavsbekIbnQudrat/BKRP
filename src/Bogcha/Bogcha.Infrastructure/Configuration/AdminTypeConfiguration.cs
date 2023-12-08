@@ -9,8 +9,8 @@ namespace Bogcha.Infrastructure.Configuration
         public void Configure(EntityTypeBuilder<Admin> builder)
         {
             builder.HasData(
-                new Admin() { Id=1,Password="Admin" , UserName = "Admin",Role="Admin"},
-                new Admin() { Id=2,Password="Tarbiyachi",UserName="Tarbiyachi",Role="Tarbiyachi"}
+                new Admin() { Id=1,Password="Admin" , UserName = "Admin",Role=Domain.Enums.Role.Admin},
+                new Admin() { Id=2,Password="Tarbiyachi",UserName="Tarbiyachi",Role=Domain.Enums.Role.Tarbiyachi}
              );
         }
     }

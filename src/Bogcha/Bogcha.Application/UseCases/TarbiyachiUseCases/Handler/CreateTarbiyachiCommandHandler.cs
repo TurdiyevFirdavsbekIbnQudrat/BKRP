@@ -22,7 +22,7 @@ namespace Bogcha.Application.UseCases.TarbiyachiUseCases.Handler
                 GuruhId = request.GuruhId,
                 Familiya = request.Familiya,
                 Ism = request.Ism,
-
+                role = Domain.Enums.Role.Tarbiyachi,
             };
             try
             {

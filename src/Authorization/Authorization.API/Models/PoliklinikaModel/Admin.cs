@@ -1,25 +1,24 @@
-﻿
-using Poliklinika.Domain.Enum;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data;
+using Authorization.API.Enums;
 
-namespace Poliklinika.Domain.Entities
+namespace Authorization.API.Models.PoliklinikaModel
 {
-    [Table("Admin", Schema = "dbo")]
+    [Table("AdminPoliklinika",Schema ="dbo")]
     public class Admin
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("Id")]
         public int Id { get; set; }
-        
+
         [Column("Parol")]
         public string Parol { get; set; }
-        
+
         [Column("UserName")]
         public string Username { get; set; }
         [Column("Role")]
-        public Role role { get; set; }
+        public Role role { get ; set; }
+
     }
 }

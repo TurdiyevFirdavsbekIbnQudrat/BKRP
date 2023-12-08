@@ -1,4 +1,5 @@
-﻿using Bogcha.Application.UseCases.TokenCases.Commands;
+﻿using Bogcha.API.DTOs;
+using Bogcha.Application.UseCases.TokenCases.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,17 +17,18 @@ namespace Bogcha.API.Controllers
         }
 
         [HttpPost]
-        public async ValueTask<IActionResult> CreateAuthAsync(CreateBogchaAdminTokenCommand command)
+        public async ValueTask<IActionResult> CreateAuthAsync(AuthDto model)
         {
+            CreateBogchaAdminTokenCommand command = new CreateBogchaAdminTokenCommand()
+            {
+                Parol=model.Parol,
+                UserName = model.UserName,
+            };
+            
             var result = await mediator.Send(command);
             return Ok(result);
 
         }
-        [HttpGet]
-        public async ValueTask<IActionResult> GetAdminAsync()
-        {
-            var result = await mediator.Send(new AdminMalumotlar1());
-            return Ok(result);
-        }
+    
     }
 }

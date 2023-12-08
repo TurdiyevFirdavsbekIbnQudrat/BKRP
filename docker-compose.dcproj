@@ -4,7 +4,7 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <DockerPublishLocally>False</DockerPublishLocally>
-    <ProjectGuid>0d300eae-0af0-4a08-a426-86bf9865d170</ProjectGuid>
+    <ProjectGuid>2290a93c-34fa-4ff5-8786-14bbdbea12c3</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>poliklinika.api</DockerServiceName>

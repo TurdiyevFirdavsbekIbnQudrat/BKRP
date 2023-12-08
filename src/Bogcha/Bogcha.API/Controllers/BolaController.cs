@@ -1,5 +1,6 @@
 ﻿using Bogcha.Application.UseCases.BolaUseCases.Commands;
 using Bogcha.Application.UseCases.BolaUseCases.Queries;
+using Bogcha.Domain.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -16,21 +17,21 @@ namespace Bogcha.API.Controllers
         {
             mediator = _mediator;
         }
-     //   [Authorize(Roles = "Admin")]
+    //    [Authorize(Roles = "Admin")]
         [HttpPost]
         public async ValueTask<IActionResult> CreateBolaAsync(CreateBolaCommand command)
         {
             var result = await mediator.Send(command);
             return Ok(result);
         }
-   //     [Authorize(Roles = "Admin,Tarbiyachi")]
+      //  [Authorize(Roles = "Admin,Tarbiyachi")]
         [HttpGet]
         public async ValueTask<IActionResult> GetAllBolaAsync()
         {
             return Ok(await mediator.Send(new GetAllBolaCommand()));
         }
 
-        [Authorize(Roles = "Admin,Tarbiyachi")]
+        //[Authorize(Roles = "Admin,Tarbiyachi")]
         [HttpGet]
         public async ValueTask<IActionResult> GetBolaByIdAsync(int id)
         {
@@ -38,7 +39,7 @@ namespace Bogcha.API.Controllers
             return Ok(await mediator.Send(command));
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpDelete]
         public async ValueTask<IActionResult> DeleteBolaById(int id)
         {
@@ -46,7 +47,7 @@ namespace Bogcha.API.Controllers
             return Ok(await mediator.Send(command));
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPut]
         public async ValueTask<IActionResult> UpdateBolaById(UpdateBolaCommand command)
         {
