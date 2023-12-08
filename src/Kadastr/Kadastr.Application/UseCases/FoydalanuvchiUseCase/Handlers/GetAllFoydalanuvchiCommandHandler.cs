@@ -20,7 +20,7 @@ namespace Kadastr.Application.UseCases.FoydalanuvchiUseCase.Handlers
 
             try
             {
-                var HammaFoydlanuvchilar = await _kadastrDbContext.Foydalanuvchilar.Include(x => x.yer).ToListAsync();
+                var HammaFoydlanuvchilar = await _kadastrDbContext.Foydalanuvchilar.ToListAsync();
          
                 return HammaFoydlanuvchilar;
             }

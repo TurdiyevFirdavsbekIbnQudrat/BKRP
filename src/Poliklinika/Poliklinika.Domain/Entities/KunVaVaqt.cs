@@ -20,9 +20,5 @@ namespace Poliklinika.Domain.Entities
         public string Kun { get; set; }
         
         
-        [Column("ShifokorIshKunlariId")]
-        public int ShifokorIshKunlarId { get; set; }
-        [ForeignKey("ShifokorIshKunlarId")]
-        public ShifokorIshKunlari shifokorIshKunlari { get; set; }
     }
 }

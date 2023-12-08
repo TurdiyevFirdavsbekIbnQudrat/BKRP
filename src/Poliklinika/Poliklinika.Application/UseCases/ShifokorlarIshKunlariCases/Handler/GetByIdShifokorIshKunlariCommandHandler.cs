@@ -26,7 +26,7 @@ namespace Poliklinika.Application.UseCases.ShifokorlarIshKunlariCases.Handler
 
             try
             {
-                ShifokorIshKunlari Ishchi = poliknikaDbContext.shifokorningIshKunlari.Include(x=>x.kunVaVaqt).Where(x=>x.Id==request.Id) as ShifokorIshKunlari;
+                ShifokorIshKunlari Ishchi =await poliknikaDbContext.shifokorningIshKunlari.FirstOrDefaultAsync(x=>x.Id==request.Id);
                 return Ishchi;
 
             }

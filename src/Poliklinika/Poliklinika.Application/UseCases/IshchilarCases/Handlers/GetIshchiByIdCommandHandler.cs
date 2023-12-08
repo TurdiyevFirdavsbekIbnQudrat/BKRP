@@ -19,7 +19,7 @@ namespace Poliklinika.Application.UseCases.IshchilarCases.Handlers
         {
             
             
-                Ishchi BirIshchi = poliklinikaDbContext.Ishchilar.Include(x=>x.shifokorIshKunlari).ThenInclude(x=>x.kunVaVaqt).Where(x=>x.Id==request.Id) as Ishchi;
+                Ishchi BirIshchi =await poliklinikaDbContext.Ishchilar.FirstOrDefaultAsync(x=>x.Id==request.Id) ;
             if (BirIshchi != null)
             {
                 var command = new Ishchi()
@@ -28,7 +28,6 @@ namespace Poliklinika.Application.UseCases.IshchilarCases.Handlers
                     Ism = BirIshchi.Ism,
                     Lavozimi = BirIshchi.Lavozimi,
                     XonaNomi = BirIshchi.XonaNomi,
-                    shifokorIshKunlari=BirIshchi.shifokorIshKunlari
                 };
                 return command;
             }

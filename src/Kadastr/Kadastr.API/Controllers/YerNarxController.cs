@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Kadastr.API.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/yernarxlar")]
     [ApiController]
     public class YerNarxController : ControllerBase
     {
@@ -38,7 +38,7 @@ namespace Kadastr.API.Controllers
         }
 
         //  [Authorize]
-        [HttpGet]
+        [HttpGet("{id}")]
         public async ValueTask<IActionResult> GetByIdYerNarxiAsync(int id)
         {
             var command = new GetByIdYerNarxiCommand { Id = id };
@@ -46,7 +46,7 @@ namespace Kadastr.API.Controllers
         }
 
         //[Authorize]
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async ValueTask<IActionResult> DeleteYerNarxiById(int id)
         {
             DeleteYerNarxiCommand command = new DeleteYerNarxiCommand() { Id = id };

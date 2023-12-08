@@ -20,8 +20,6 @@ namespace Bogcha.Application.UseCases.DavomatUseCases.Handlers
             var command = new Davomat()
             {
                 ishtirok = request.ishtirok,
-                BolaId = request.BolaId,
-                TarbiyachId = request.TarbiyachId,
 
             };
             try

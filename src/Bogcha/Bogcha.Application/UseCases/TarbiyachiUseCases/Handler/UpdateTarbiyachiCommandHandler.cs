@@ -23,7 +23,7 @@ namespace Bogcha.Application.UseCases.TarbiyachiUseCases.Handler
                 {
                     BirTarbiyachi.Familiya = request.Familiya;
                     BirTarbiyachi.Ism = request.Ism;
-                    BirTarbiyachi.GuruhId = request.GuruhId;
+                    
 
                     await bogchaDbContext.SaveChangesAsync(cancellationToken);
                     return "yangilandi!!!";

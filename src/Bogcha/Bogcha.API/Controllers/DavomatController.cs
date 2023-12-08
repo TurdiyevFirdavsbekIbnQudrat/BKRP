@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Bogcha.API.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/davomatlar")]
     [ApiController]
     public class DavomatController : ControllerBase
     {
@@ -34,7 +34,7 @@ namespace Bogcha.API.Controllers
         }
 
         [Authorize(Roles = "Admin,Tarbiyachi")]
-        [HttpGet]
+        [HttpGet("{id}")]
         public async ValueTask<IActionResult> GetDavomatByIdAsync(int id)
         {
             GetByIdDavomatCommand command = new GetByIdDavomatCommand { Id = id };
@@ -42,7 +42,7 @@ namespace Bogcha.API.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async ValueTask<IActionResult> DeleteDavomatById(int id)
         {
             DeleteDavomatCommand command = new DeleteDavomatCommand() { Id = id };

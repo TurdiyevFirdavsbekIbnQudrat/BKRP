@@ -23,6 +23,5 @@ namespace Poliklinika.Domain.Entities
         [Column("XonaNomi")]
         public string XonaNomi { get; set; }
         
-        public ShifokorIshKunlari shifokorIshKunlari { get; set; }
        }
 }

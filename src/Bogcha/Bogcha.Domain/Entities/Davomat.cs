@@ -16,10 +16,5 @@ namespace Bogcha.Domain.Entities
         public int BolaId { get; set; }
         [ForeignKey("BolaId")]
         public Bola bola { get; set; }
-        [Column("TarbiyachId")]
-        public int TarbiyachId { get; set; }
-        [ForeignKey("TarbiyachId")]
-        public Tarbiyachi tarbiyachi { get; set; }
-
     }
 }

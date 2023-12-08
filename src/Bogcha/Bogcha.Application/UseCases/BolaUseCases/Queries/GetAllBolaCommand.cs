@@ -8,7 +8,7 @@ namespace Bogcha.Application.UseCases.BolaUseCases.Queries
         public int Id { get; set; }
         public string Ism { get; set; }
         public string Familiya { get; set; }
-        public int GuruhId { get; set; }
+  
 
     }
 }

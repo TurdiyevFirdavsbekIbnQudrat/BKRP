@@ -16,7 +16,7 @@ namespace Kadastr.Infrastructure
             //var connectionsString = "Server=DESKTOP-HUHB6EP;Database = server21;Trusted_Connection=True;TrustServerCertificate=True;";
 
 
-            var connectionsString = $"Data Source={dbHost};Initial Catalog={dbName};User ID=sa;Password={dbPassword};Encrypt=False;Connection Timeout=200";
+            var connectionsString = $"Data Source={dbHost};Initial Catalog={dbName};User ID=sa;Password={dbPassword};Encrypt=False;Connection Timeout=120";
 
             services.AddDbContext<IKadastrDbContext, KadastrDbContext>(options =>
             {

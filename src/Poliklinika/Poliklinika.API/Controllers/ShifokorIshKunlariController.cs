@@ -6,7 +6,7 @@ using Poliklinika.Application.UseCases.ShifokorlarIshKunlariCases.Queries;
 
 namespace Poliklinika.API.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/shifokorishkunlar")]
     [ApiController]
     public class ShifokorIshKunlariController : ControllerBase
     {
@@ -32,7 +32,7 @@ namespace Poliklinika.API.Controllers
         }
 
         [Authorize]
-        [HttpGet]
+        [HttpGet("{id}")]
         public async ValueTask<IActionResult> GetShifokorIshKunlariByIdAsync(int id)
         {
             var command = new GetByIdShifokorIshKunlariCommand { Id = id };
@@ -40,7 +40,7 @@ namespace Poliklinika.API.Controllers
         }
 
         [Authorize]
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async ValueTask<IActionResult> DeleteShifokorIshKunlariById(int id)
         {
             DeleteShifokorIshKunlariCommand command = new DeleteShifokorIshKunlariCommand() { Id = id };

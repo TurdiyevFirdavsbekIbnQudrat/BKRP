@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Bogcha.API.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/bolalar")]
     [ApiController]
     public class BolaController : ControllerBase
     {
@@ -32,7 +32,9 @@ namespace Bogcha.API.Controllers
         }
 
         //[Authorize(Roles = "Admin,Tarbiyachi")]
-        [HttpGet]
+        
+        [HttpGet("{id}")]
+
         public async ValueTask<IActionResult> GetBolaByIdAsync(int id)
         {
             GetByIdBolaCommand command = new GetByIdBolaCommand { Id = id };
@@ -40,7 +42,7 @@ namespace Bogcha.API.Controllers
         }
 
         //[Authorize(Roles = "Admin")]
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async ValueTask<IActionResult> DeleteBolaById(int id)
         {
             DeleteBolaCommand command = new DeleteBolaCommand() { Id = id };

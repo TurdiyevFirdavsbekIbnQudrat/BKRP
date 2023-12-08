@@ -27,7 +27,7 @@ namespace Kadastr.Infrastructure
         public virtual DbSet<Rollar> Rollars { get; set; }
         public virtual DbSet<Yer> Yerlar { get; set; }
         public virtual DbSet<YerNarxi> YerNarxlar { get; set; }
-        async ValueTask<int> IKadastrDbContext.SaveChangesAsync(CancellationToken cancellationToken)
+        async Task<int> IKadastrDbContext.SaveChangesAsync(CancellationToken cancellationToken)
         {
             return await base.SaveChangesAsync(cancellationToken);
         }

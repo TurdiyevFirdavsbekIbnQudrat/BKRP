@@ -7,7 +7,5 @@ namespace Bogcha.Application.UseCases.DavomatUseCases.Queries
     {
         public int Id { get; set; }
         public int ishtirok { get; set; }
-        public int BolaId { get; set; }
-        public int TarbiyachId { get; set; }
     }
 }

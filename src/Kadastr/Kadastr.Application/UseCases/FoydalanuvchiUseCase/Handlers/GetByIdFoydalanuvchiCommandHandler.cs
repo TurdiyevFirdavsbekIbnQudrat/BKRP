@@ -18,7 +18,7 @@ namespace Kadastr.Application.UseCases.FoydalanuvchiUseCase.Handlers
         public async Task<Foydalanuvchi> Handle(GetByIdFoydalanuvchiCommand request, CancellationToken cancellationToken)
         {
             try {
-                var BirFoydalanuvchi = await _kadastrDbContext.Foydalanuvchilar.Include(x => x.yer).Where(x => x.Id == request.Id).FirstOrDefaultAsync();
+                var BirFoydalanuvchi = await _kadastrDbContext.Foydalanuvchilar.Where(x => x.Id == request.Id).FirstOrDefaultAsync();
                 return BirFoydalanuvchi;
             }
             catch

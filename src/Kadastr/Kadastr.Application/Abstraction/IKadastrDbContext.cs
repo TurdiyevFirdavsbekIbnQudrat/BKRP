@@ -10,6 +10,6 @@ namespace Kadastr.Application.Abstraction
         DbSet<Rollar> Rollars { get; set; }
         DbSet<Yer> Yerlar { get; set; }
         DbSet<YerNarxi> YerNarxlar { get; set; }
-        public ValueTask<int> SaveChangesAsync(CancellationToken cancellationToken);
+        public Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

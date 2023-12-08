@@ -27,7 +27,7 @@ namespace Poliklinika.Infrastructure.Configuration
                   Payshanba = "13:00",
                   Juma = "13:00",
                   Shanba = "08:30",
-                  IshchId=1
+                  
                 }, 
                 new ShifokorIshKunlari
                 {   Id=2,
@@ -37,7 +37,7 @@ namespace Poliklinika.Infrastructure.Configuration
                     Payshanba = "13:00",
                     Juma = "13:00",
                     Shanba = "08:30",
-                    IshchId = 2
+                   
                 }
                 );
 

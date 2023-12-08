@@ -20,8 +20,6 @@ namespace Poliklinika.Application.UseCases.KunVaVaqtlarCases.Handlers
             {
                 Kun = DateTime.Today.ToString(),
                 Vaqt = "8:00",
-                ShifokorIshKunlarId = request.ShifokorIshKunlarId,
-
             };
             try
             {

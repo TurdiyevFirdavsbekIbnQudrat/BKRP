@@ -22,8 +22,6 @@ namespace Authorization.API.Models.BogchaModel
         [Column("Password")]
         public string Password { get; set; }
 
-        [Column("GuruhId")]
-        public int GuruhId { get; set; }
 
     }
 }

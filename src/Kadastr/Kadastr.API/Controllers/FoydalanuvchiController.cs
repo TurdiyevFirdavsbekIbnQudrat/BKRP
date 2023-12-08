@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Kadastr.API.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/foydalanuvchilar")]
     [ApiController]
     public class FoydalanuvchiController : ControllerBase
     {
@@ -24,15 +24,8 @@ namespace Kadastr.API.Controllers
         public async ValueTask<IActionResult> CreateFoydalanuvchiAsync(CreateFoydalanuvchiCommand command)
         {
             var result = await mediator.Send(command);
-            var createF = new CreateFoydalanuvchiDto()
-            {
-                Id = result.Id,
-                FirstName = result.FirstName,
-                LastName = result.LastName,
-                Parol = result.Parol,
-                UserName = result.UserName
-            };
-            return Ok(createF);
+           
+            return Ok(result);
         }
 
         //    [Authorize]
@@ -43,7 +36,7 @@ namespace Kadastr.API.Controllers
         }
 
         //  [Authorize]
-        [HttpGet]
+        [HttpGet("{id}")]
         public async ValueTask<IActionResult> GetFoydalanuvchiByIdAsync(int id)
         {
             var command = new GetByIdFoydalanuvchiCommand { Id = id };
@@ -51,7 +44,7 @@ namespace Kadastr.API.Controllers
         }
 
         //[Authorize]
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async ValueTask<IActionResult> DeleteFoydalanuvchiById(int id)
         {
             DeleteFoydalanuvchiCommand command = new DeleteFoydalanuvchiCommand() { Id = id };

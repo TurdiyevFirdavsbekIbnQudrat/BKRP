@@ -14,6 +14,5 @@ namespace Kadastr.Domain.Entities
         public string Viloyat { get; set; }
         [Column("YerNarx")]
         public int YerNarx { get; set; }
-        public IEnumerable<Yer> yer { get; set; }
     }
 }

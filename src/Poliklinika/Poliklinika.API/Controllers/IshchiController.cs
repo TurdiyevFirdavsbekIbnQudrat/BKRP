@@ -8,7 +8,7 @@ using Poliklinika.Domain.Entities;
 
 namespace Poliklinika.API.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/ishchilar")]
     [ApiController]
     public class IshchiController : ControllerBase
     {
@@ -34,7 +34,7 @@ namespace Poliklinika.API.Controllers
         }
 
         [Authorize]
-        [HttpGet]
+        [HttpGet("{id}")]
         public async ValueTask<IActionResult> GetIshchiByIdAsync(int id)
         {
             var command  = new GetIshchiByIdCommand { Id = id };
@@ -42,7 +42,7 @@ namespace Poliklinika.API.Controllers
         }
 
         [Authorize]
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async ValueTask<IActionResult> DeleteIshchiById(int id)
         {
             DeleteIshchiCommand command = new DeleteIshchiCommand() { id = id };

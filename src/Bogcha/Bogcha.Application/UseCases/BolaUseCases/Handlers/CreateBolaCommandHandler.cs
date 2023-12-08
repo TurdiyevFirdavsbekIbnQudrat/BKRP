@@ -21,7 +21,7 @@ namespace Bogcha.Application.UseCases.BolaUseCases.Handlers
             {
                 Ism = request.Ism,
                 Familiya = request.Familiya,
-                GuruhId = request.GuruhId,
+            
             };
             try
             {
