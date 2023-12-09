@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Kadastr.API.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/yerlar")]
     [ApiController]
     public class YerController : ControllerBase
     {
@@ -27,7 +27,6 @@ namespace Kadastr.API.Controllers
             {
                 Id = result.Id,
                 sotix=result.sotix,
-                FoydalanuvchiId=result.FoydalanuvchiId,
                 YerNarxiId=result.YerNarxiId,
             };
             return Ok(createY);
@@ -41,7 +40,7 @@ namespace Kadastr.API.Controllers
         }
 
         //  [Authorize]
-        [HttpGet]
+        [HttpGet("{id}")]
         public async ValueTask<IActionResult> GetByIdYerAsync(int id)
         {
             var command = new GetByIdYerCommand { Id = id };
@@ -49,7 +48,7 @@ namespace Kadastr.API.Controllers
         }
 
         //[Authorize]
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async ValueTask<IActionResult> DeleteYerById(int id)
         {
             DeleteYerCommand command = new DeleteYerCommand() { Id = id };

@@ -19,7 +19,7 @@ namespace Bogcha.Application.UseCases.TarbiyachiUseCases.Handler
 
             var command = new Tarbiyachi()
             {
-                GuruhId = request.GuruhId,
+              
                 Familiya = request.Familiya,
                 Ism = request.Ism,
                 role = Domain.Enums.Role.Tarbiyachi,

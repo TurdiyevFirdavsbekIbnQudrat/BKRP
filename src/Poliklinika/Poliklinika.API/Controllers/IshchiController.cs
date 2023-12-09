@@ -8,7 +8,7 @@ using Poliklinika.Domain.Entities;
 
 namespace Poliklinika.API.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/ishchilar")]
     [ApiController]
     public class IshchiController : ControllerBase
     {
@@ -18,7 +18,7 @@ namespace Poliklinika.API.Controllers
         {
             mediator = _mediator;
         }
-       [Authorize]
+       [Authorize(Roles ="Admin")]
         [HttpPost]
         public async ValueTask<IActionResult> CreateIshchiAsync(CreateIshchilarCommand command)
         {
@@ -26,30 +26,30 @@ namespace Poliklinika.API.Controllers
             return Ok(result);
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async ValueTask<IActionResult> GetAllIshchiAsync()
         {
             return Ok(await mediator.Send(new GetAllishchiCommand()));
         }
 
-        [Authorize]
-        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        [HttpGet("{id}")]
         public async ValueTask<IActionResult> GetIshchiByIdAsync(int id)
         {
             var command  = new GetIshchiByIdCommand { Id = id };
             return Ok(await mediator.Send(command));
         }
 
-        [Authorize]
-        [HttpDelete]
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("{id}")]
         public async ValueTask<IActionResult> DeleteIshchiById(int id)
         {
             DeleteIshchiCommand command = new DeleteIshchiCommand() { id = id };
             return Ok(await mediator.Send(command));
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPut]
         public async ValueTask<IActionResult> UpdateIshchiById(UpdateIshchiCommand command)
         {

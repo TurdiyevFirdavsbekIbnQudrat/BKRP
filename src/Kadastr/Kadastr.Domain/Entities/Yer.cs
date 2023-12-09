@@ -21,9 +21,5 @@ namespace Kadastr.Domain.Entities
         public int YerNarxiId { get; set; }
         [ForeignKey("YerNarxiId")]
         public YerNarxi yerNarxi { get; set; }
-        [Column("FoydalanuvchiId")]
-        public int FoydalanuvchiId { get; set; }
-        [ForeignKey("FoydalanuvchiId")]
-        public Foydalanuvchi foydalanuvchi { get; set; }
     }
 }

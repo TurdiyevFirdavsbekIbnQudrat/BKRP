@@ -8,6 +8,5 @@ namespace Poliklinika.Application.UseCases.KunVaVaqtlarCases.Queries
         public int Id { get; set; }
         public string Vaqt { get; set; }
         public string Kun { get; set; }
-        public int ShifokorIshKunlarId { get; set; }
     }
 }

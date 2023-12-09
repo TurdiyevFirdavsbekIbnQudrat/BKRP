@@ -22,8 +22,6 @@ namespace Bogcha.Application.UseCases.DavomatUseCases.Handlers
                 try
                 {
                     BirDavomat.ishtirok = request.ishtirok;
-                    BirDavomat.TarbiyachId = request.TarbiyachId;
-                    BirDavomat.BolaId = request.BolaId;
                     await bogchaDbContext.SaveChangesAsync(cancellationToken);
                     return "yangilandi!!!";
                 }

@@ -30,7 +30,6 @@ namespace Poliklinika.Application.UseCases.ShifokorlarIshKunlariCases.Handler
                 Payshanba = request.Payshanba,
                 Juma = request.Juma,
                 Shanba = request.Shanba,
-                IshchId = request.IshchId,
             };
             try
             {

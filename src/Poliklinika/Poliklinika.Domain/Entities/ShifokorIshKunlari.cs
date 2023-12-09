@@ -22,11 +22,6 @@ namespace Poliklinika.Domain.Entities
         public string Juma { get; set; }
         [Column("Shanba")]
         public string Shanba { get; set; }
-        [Column("IshchiId")]
-        public int IshchId { get; set; }
-        [ForeignKey("IshchId")]
-        public Ishchi ishchi { get; set; }
-        public ICollection<KunVaVaqt> kunVaVaqt { get; set; }
 
     }
 

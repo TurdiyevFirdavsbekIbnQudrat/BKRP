@@ -25,9 +25,7 @@ namespace Kadastr.Application.UseCases.YerUseCases.Handlers
             {
                 try
                 {
-                    yer.FoydalanuvchiId = request.FoydalanuvchiId;
                     yer.sotix = request.sotix;
-                    yer.YerNarxiId = request.YerNarxiId;
                     await _kadastrDbContext.SaveChangesAsync(cancellationToken);
                     return "Yangilanfi!!";
                 }

@@ -21,8 +21,8 @@ namespace Kadastr.Application.UseCases.FoydalanuvchiUseCase.Handlers
 
         public async Task<Foydalanuvchi> Handle(CreateFoydalanuvchiCommand request, CancellationToken cancellationToken)
         {
-            try
-            {
+            //try
+            //{ 
                 var command = new Foydalanuvchi()
                 {
                     FirstName = request.FirstName,
@@ -31,33 +31,32 @@ namespace Kadastr.Application.UseCases.FoydalanuvchiUseCase.Handlers
                     UserName=request.UserName
 
                 };
-                var HammaFoydalanuvchilarUserNameniTekshir = _kadastrDbContext.Rollars.Where(x => x.UserName == request.UserName);
-                if (HammaFoydalanuvchilarUserNameniTekshir == null)
-                {
+                //var HammaFoydalanuvchilarUserNameniTekshir = _kadastrDbContext.Rollars.Where(x => x.UserName == request.UserName) as Rollar;
+                //if (HammaFoydalanuvchilarUserNameniTekshir == null)
+                //{
 
-                    var rollar = new Rollar()
-                    {
-                        Role = "Foydalanuvchi",
-                        Parol = request.Parol,
-                        UserName = request.UserName,
-                    };
+                //    var rollar = new Rollar()
+                //    {
+                //        Role = "Foydalanuvchi",
+                //        Parol = request.Parol,
+                //        UserName = request.UserName,
+                //    };
 
-                    _kadastrDbContext.Rollars.Add(rollar);
-                    _kadastrDbContext.SaveChangesAsync(cancellationToken);
-                }
-                else
-                {
-                    command.UserName = "Boshqa Variantni Sinab ko'ring ,bu username oldin qo'llanilgan";
-                    return command;
-                }
+                //    _kadastrDbContext.Rollars.Add(rollar);
+                //}
+                //else
+                //{
+                //    command.UserName = "Boshqa Variantni Sinab ko'ring ,bu username oldin qo'llanilgan";
+                //    return command;
+                //}
                 await _kadastrDbContext.Foydalanuvchilar.AddAsync(command);
                 await _kadastrDbContext.SaveChangesAsync(cancellationToken);
                 return command;
-            }
-            catch
-            {
-                return new Foydalanuvchi();
-            }
+            //}
+        //    catch
+            //{
+            //    return new Foydalanuvchi();
+            //}
         }
     }
 }

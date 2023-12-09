@@ -6,7 +6,7 @@ using Poliklinika.Application.UseCases.ShifokorlarIshKunlariCases.Queries;
 
 namespace Poliklinika.API.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/shifokorishkunlar")]
     [ApiController]
     public class ShifokorIshKunlariController : ControllerBase
     {
@@ -16,7 +16,7 @@ namespace Poliklinika.API.Controllers
         {
             mediator = _mediator;
         }
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async ValueTask<IActionResult> CreateShifokorIshKunlariAsync(CreateShifokorIshKunlariCommand command)
         {
@@ -24,30 +24,30 @@ namespace Poliklinika.API.Controllers
             return Ok(result);
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async ValueTask<IActionResult> GetAllShifokorIshKunlariAsync()
         {
             return Ok(await mediator.Send(new GetAllShifokorIshKunlariCommand()));
         }
 
-        [Authorize]
-        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        [HttpGet("{id}")]
         public async ValueTask<IActionResult> GetShifokorIshKunlariByIdAsync(int id)
         {
             var command = new GetByIdShifokorIshKunlariCommand { Id = id };
             return Ok(await mediator.Send(command));
         }
 
-        [Authorize]
-        [HttpDelete]
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("{id}")]
         public async ValueTask<IActionResult> DeleteShifokorIshKunlariById(int id)
         {
             DeleteShifokorIshKunlariCommand command = new DeleteShifokorIshKunlariCommand() { Id = id };
             return Ok(await mediator.Send(command));
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPut]
         public async ValueTask<IActionResult> UpdateAdminById(UpdateShifokorIshKunlariCommand command)
         {

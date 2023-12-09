@@ -19,6 +19,5 @@ namespace Kadastr.Domain.Entities
         [Column("UserName")]
         public string UserName { get; set; }
 
-        public IEnumerable<Yer> yer {  get; set; } 
     }
 }

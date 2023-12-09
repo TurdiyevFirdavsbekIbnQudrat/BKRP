@@ -9,7 +9,7 @@ using Poliklinika.Domain.Entities;
 
 namespace Poliklinika.API.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/kunvavaqtlar")]
     [ApiController]
     public class KunVaVaqtController : ControllerBase
     {
@@ -19,19 +19,16 @@ namespace Poliklinika.API.Controllers
         {
             mediator = _mediator;
         }
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
-        public async ValueTask<IActionResult> CreateKunVaVaqtAsync(int foydalanuvchiId)
+        public async ValueTask<IActionResult> CreateKunVaVaqtAsync()
         {
-            CreateKunVaVaqtCommand command = new CreateKunVaVaqtCommand()
-            {
-                ShifokorIshKunlarId = foydalanuvchiId,
-            };
-            var result = await mediator.Send(command);
+            
+            var result = await mediator.Send(new CreateKunVaVaqtCommand());
             return Ok(result);
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async ValueTask<IActionResult> GetAllKunVaVaqtAsync()
         {

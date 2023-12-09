@@ -11,7 +11,6 @@ namespace Poliklinika.Application.UseCases.ShifokorlarIshKunlariCases.Commands
         public string Payshanba { get; set; }
         public string Juma { get; set; }
         public string Shanba { get; set; }
-        public int IshchId { get; set; }
 
 
     }

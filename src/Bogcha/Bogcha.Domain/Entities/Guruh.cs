@@ -12,7 +12,5 @@ namespace Bogcha.Domain.Entities
         public int Id { get; set; }
         [Column("GuruhName")]
         public string GuruhName { get; set; }
-        public IEnumerable<Tarbiyachi> tarbiyachi { get; set; }
-        public IEnumerable<Bola> bola { get; set; }
     }
 }

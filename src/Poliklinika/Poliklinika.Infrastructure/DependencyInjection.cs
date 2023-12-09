@@ -20,7 +20,7 @@ namespace Poliklinika.Infrastructure
             //var connectionsString = "Server=DESKTOP-HUHB6EP;Database = server21;Trusted_Connection=True;TrustServerCertificate=True;";
 
 
-            var connectionsString = $"Data Source={dbHost};Initial Catalog={dbName};User ID=sa;Password={dbPassword};Encrypt=False;Connection Timeout=120";
+            var connectionsString = $"Data Source={dbHost};Initial Catalog={dbName};User ID=sa;Password={dbPassword};Persist Security Info=True;Connect Timeout = 30;Encrypt=False;TrustServerCertificate=True;Application Intent = ReadWrite;MultipleActiveResultSets=True;MultiSubnetFailover=True; Application Name=Ovit_Software;Pooling=True;";
 
             services.AddDbContext<IPoliklinikaDbContext, PoliklinikaDbContext>(options =>
             {

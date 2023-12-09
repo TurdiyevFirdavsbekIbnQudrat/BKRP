@@ -13,8 +13,8 @@ namespace Poliklinika.Infrastructure.Configuration
             builder.Property(x => x.Id).IsRequired();
 
             builder.HasData(
-             new KunVaVaqt {Id=1, Kun=DateTime.Today.ToString(), ShifokorIshKunlarId = 1,Vaqt="9:30" },
-             new KunVaVaqt {Id=2, Kun = DateTime.Today.ToString(), ShifokorIshKunlarId = 2, Vaqt = "10:30" }
+             new KunVaVaqt {Id=1, Kun=DateTime.Today.ToString(),Vaqt="9:30" },
+             new KunVaVaqt {Id=2, Kun = DateTime.Today.ToString(), Vaqt = "10:30" }
                 );
 
         }

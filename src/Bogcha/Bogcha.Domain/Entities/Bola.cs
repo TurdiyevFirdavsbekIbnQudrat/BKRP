@@ -17,12 +17,7 @@ namespace Bogcha.Domain.Entities
         [Column("Familiya")]
         public string Familiya { get; set; }
 
-        [Column("GuruhId")]
-        public int GuruhId { get; set; }
-        [ForeignKey("GuruhId")]
-        public Guruh guruh { get; set; }
         
-        public IEnumerable<Davomat> davomat { get; set; }
 
 
     }

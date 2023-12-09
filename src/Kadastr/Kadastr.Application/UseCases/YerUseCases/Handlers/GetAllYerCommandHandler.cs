@@ -26,7 +26,7 @@ namespace Kadastr.Application.UseCases.YerUseCases.Handlers
 
             try
             {
-                var HammaFoydlanuvchilar = await _kadastrDbContext.Yerlar.Include(x => x.foydalanuvchi).Include(x=>x.yerNarxi).ToListAsync();
+                var HammaFoydlanuvchilar = await _kadastrDbContext.Yerlar.ToListAsync();
 
                 return HammaFoydlanuvchilar;
             }

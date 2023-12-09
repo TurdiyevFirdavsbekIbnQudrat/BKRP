@@ -25,7 +25,7 @@ namespace Kadastr.Application.UseCases.YerUseCases.Handlers
         {
             try
             {
-                var BirFoydalanuvchi = await _kadastrDbContext.Yerlar.Include(x=>x.foydalanuvchi).Include(x=>x.yerNarxi).Where(x => x.Id == request.Id).FirstOrDefaultAsync();
+                var BirFoydalanuvchi = await _kadastrDbContext.Yerlar.FirstOrDefaultAsync();
                 return BirFoydalanuvchi;
             }
             catch

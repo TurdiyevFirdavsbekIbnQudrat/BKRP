@@ -16,14 +16,13 @@ namespace Bogcha.Infrastructure.Configuration
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Id).IsRequired();
-            builder.Property(x => x.TarbiyachId).IsRequired();
             builder.Property(x => x.ishtirok).HasDefaultValue(0);
             builder.Property(x => x.BolaId).IsRequired();
             builder.HasData(
-                new Davomat { Id = 1, BolaId = 1, TarbiyachId=1,ishtirok=1 },
-                new Davomat { Id = 2, BolaId = 2, TarbiyachId =1, ishtirok = 1 },
-                new Davomat { Id = 3, BolaId = 3, TarbiyachId = 2, ishtirok = 1 },
-                new Davomat { Id = 4, BolaId = 4, TarbiyachId = 2 ,ishtirok=0}
+                new Davomat { Id = 1, BolaId = 1,ishtirok=1 },
+                new Davomat { Id = 2, BolaId = 2, ishtirok = 2 },
+                new Davomat { Id = 3, BolaId = 3, ishtirok = 3 },
+                new Davomat { Id = 4, BolaId = 4, ishtirok = 4 }
                 );
      
         }

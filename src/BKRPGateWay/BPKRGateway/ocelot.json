@@ -2,8 +2,8 @@
   "Routes": [
     //poliklinika [shifokorIshKunlari]
     {
-      "UpstreamPathTemplate": "/ShifokorIshKunlari",
-      "UpstreamHttpMethod": [ "Post", "GET" ],
+      "UpstreamPathTemplate": "/shifokorishkunlar",
+      "UpstreamHttpMethod": [ "Post", "GET","PUT" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -11,12 +11,12 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/ShifokorIshKunlari"
+      "DownstreamPathTemplate": "/api/shifokorishkunlar"
     },
 
     {
-      "UpstreamPathTemplate": "/ShifokorIshKunlari/{id}",
-      "UpstreamHttpMethod": [ "GET", "DELETE", "PUT" ],
+      "UpstreamPathTemplate": "/shifokorishkunlar/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -24,24 +24,12 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/ShifokorIshKunlari/{id}"
-    },
-    {
-      "UpstreamPathTemplate": "/api/ShifokorIshKunlari/GetShifokorIshKunlariById",
-      "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "poliklinika.api",
-          "Port": 80
-        }
-      ],
-      "DownstreamPathTemplate": "/api/ShifokorIshKunlari/GetShifokorIshKunlariById"
+      "DownstreamPathTemplate": "/api/shifokorishkunlar/{id}"
     },
     //poliklinika [Ishchi]
     {
-      "UpstreamPathTemplate": "/Ishchi",
-      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "UpstreamPathTemplate": "/ishchilar",
+      "UpstreamHttpMethod": [ "Get", "Post", "put" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -49,11 +37,11 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/Ishchi"
+      "DownstreamPathTemplate": "/api/ishchilar"
     },
     {
-      "UpstreamPathTemplate": "/Ishchi/{id}",
-      "UpstreamHttpMethod": [ "Put", "get", "delete" ],
+      "UpstreamPathTemplate": "/ishchilar/{id}",
+      "UpstreamHttpMethod": [ "get", "delete" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -61,7 +49,7 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/Ishchi/{id}"
+      "DownstreamPathTemplate": "/api/ishchilar/{id}"
     },
     //poliklinika [Authentication]
     {
@@ -76,34 +64,10 @@
       ],
       "DownstreamPathTemplate": "/api/Auth"
     },
-    //poliklinika [Admin]
-    {
-      "UpstreamPathTemplate": "/Admin",
-      "UpstreamHttpMethod": [ "Post", "Get" ],
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "poliklinika.api",
-          "Port": 80
-        }
-      ],
-      "DownstreamPathTemplate": "/api/Admin"
-    },
-    {
-      "UpstreamPathTemplate": "/Admin/{id}",
-      "UpstreamHttpMethod": [ "DELETE", "GET", "PUT" ],
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "poliklinika.api",
-          "Port": 80
-        }
-      ],
-      "DownstreamPathTemplate": "/api/Admin/{id}"
-    },
+  
     //poliklinika [kunVaVaqt]
     {
-      "UpstreamPathTemplate": "/KunVaVaqt",
+      "UpstreamPathTemplate": "/kunvavaqtlar",
       "UpstreamHttpMethod": [ "POST", "GET" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -112,12 +76,12 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/KunVaVaqt"
+      "DownstreamPathTemplate": "/api/kunvavaqtlar"
     },
     //Bogcha [Bola]
     {
-      "UpstreamPathTemplate": "/Bola",
-      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "UpstreamPathTemplate": "/bolalar",
+      "UpstreamHttpMethod": [ "POST", "GET","PUT" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -125,11 +89,11 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/Bola"
+      "DownstreamPathTemplate": "/api/bolalar"
     },
     {
-      "UpstreamPathTemplate": "/Bola/{id}",
-      "UpstreamHttpMethod": [ "DELETE", "GET", "PUT" ],
+      "UpstreamPathTemplate": "/bolalar/{id}",
+      "UpstreamHttpMethod": [ "DELETE", "GET" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -137,12 +101,12 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/Bola/{id}"
+      "DownstreamPathTemplate": "/api/bolalar/{id}"
     },
     //Bola[davomat] http://localhost:329/api/Davomat/CreateDavomat
     {
-      "UpstreamPathTemplate": "/Davomat",
-      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "UpstreamPathTemplate": "/davomatlar",
+      "UpstreamHttpMethod": [ "POST", "GET", "put" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -150,11 +114,11 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/Davomat"
+      "DownstreamPathTemplate": "/api/davomatlar"
     },
     {
-      "UpstreamPathTemplate": "/Davomat/{id}",
-      "UpstreamHttpMethod": [ "DELETE", "GET", "PUT" ],
+      "UpstreamPathTemplate": "/davomatlar/{id}",
+      "UpstreamHttpMethod": [ "DELETE", "GET" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -162,12 +126,12 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/Davomat/{id}"
+      "DownstreamPathTemplate": "/api/davomatlar/{id}"
     },
-    //Bola[Guruh] 
+    //Bola[Guruh]
     {
-      "UpstreamPathTemplate": "/Guruh",
-      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "UpstreamPathTemplate": "/guruhlar",
+      "UpstreamHttpMethod": [ "POST", "GET", "put" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -175,11 +139,11 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/Guruh"
+      "DownstreamPathTemplate": "/api/guruhlar"
     },
     {
-      "UpstreamPathTemplate": "/Guruh/{id}",
-      "UpstreamHttpMethod": [ "DELETE", "GET", "PUT" ],
+      "UpstreamPathTemplate": "/guruhlar/{id}",
+      "UpstreamHttpMethod": [ "DELETE", "GET" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -187,12 +151,12 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/Guruh/{id}"
+      "DownstreamPathTemplate": "/api/guruhlar/{id}"
     },
     //Bola [Tarbiyachi]
     {
-      "UpstreamPathTemplate": "/Tarbiyachi",
-      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "UpstreamPathTemplate": "/tarbiyachilar",
+      "UpstreamHttpMethod": [ "POST", "GET", "put" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -200,11 +164,11 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/Tarbiyachi"
+      "DownstreamPathTemplate": "/api/tarbiyachilar"
     },
     {
-      "UpstreamPathTemplate": "/Tarbiyachi/{id}",
-      "UpstreamHttpMethod": [ "DELETE", "GET", "PUT" ],
+      "UpstreamPathTemplate": "/tarbiyachilar/{id}",
+      "UpstreamHttpMethod": [ "DELETE", "GET" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -212,12 +176,12 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/Tarbiyachi/{id}"
+      "DownstreamPathTemplate": "/api/tarbiyachilar/{id}"
     },
     // Kadastr[Foydalanuvchi]
     {
-      "UpstreamPathTemplate": "/Foydalanuvchi",
-      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "UpstreamPathTemplate": "/foydalanuvchilar",
+      "UpstreamHttpMethod": [ "POST", "GET", "PUT" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -225,11 +189,11 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/Foydalanuvchi"
+      "DownstreamPathTemplate": "/api/foydalanuvchilar"
     },
     {
-      "UpstreamPathTemplate": "/Foydalanuvchi/{id}",
-      "UpstreamHttpMethod": [ "DELETE", "GET", "PUT" ],
+      "UpstreamPathTemplate": "/foydalanuvchilar/{id}",
+      "UpstreamHttpMethod": [ "DELETE", "GET" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -237,12 +201,12 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/Foydalanuvchi/{id}"
+      "DownstreamPathTemplate": "/api/foydalanuvchilar/{id}"
     },
     // Kadastr[Yer]
     {
-      "UpstreamPathTemplate": "/Yer",
-      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "UpstreamPathTemplate": "/yerlar",
+      "UpstreamHttpMethod": [ "POST", "GET","PUT" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -250,11 +214,11 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/Yer"
+      "DownstreamPathTemplate": "/api/yerlar"
     },
     {
-      "UpstreamPathTemplate": "/Yer/{id}",
-      "UpstreamHttpMethod": [ "DELETE", "GET", "PUT" ],
+      "UpstreamPathTemplate": "/yerlar/{id}",
+      "UpstreamHttpMethod": [ "DELETE", "GET" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -262,12 +226,12 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/Yer/{id}"
+      "DownstreamPathTemplate": "/api/yerlar/{id}"
     },
     // Kadastr [YerNarx]
     {
-      "UpstreamPathTemplate": "/YerNarx",
-      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "UpstreamPathTemplate": "/yernarxlar",
+      "UpstreamHttpMethod": [ "POST", "GET" ,"PUT"],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -275,11 +239,11 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/YerNarx"
+      "DownstreamPathTemplate": "/api/yernarxlar"
     },
     {
-      "UpstreamPathTemplate": "/YerNarx/{id}",
-      "UpstreamHttpMethod": [ "DELETE", "GET", "PUT" ],
+      "UpstreamPathTemplate": "/yernarxlar/{id}",
+      "UpstreamHttpMethod": [ "DELETE", "GET" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -287,7 +251,7 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/YerNarx/{id}"
+      "DownstreamPathTemplate": "/api/yernarxlar/{id}"
     }
 
 

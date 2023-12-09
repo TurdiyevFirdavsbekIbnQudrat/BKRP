@@ -25,8 +25,6 @@ namespace Kadastr.Application.UseCases.YerUseCases.Handlers
             {
                     var yer = new Yer() {
                     sotix = request.sotix,
-                    FoydalanuvchiId = request.FoydalanuvchiId,
-                    YerNarxiId = request.YerNarxiId,
                      };
                 await _kadastrDbContext.Yerlar.AddAsync(yer);
                 await _kadastrDbContext.SaveChangesAsync(cancellationToken);
